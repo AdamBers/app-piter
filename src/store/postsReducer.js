@@ -1,9 +1,9 @@
 const GET_POSTS = 'GET_POSTS'
-const CHANGE_CURR_POST = 'CHANGE_CURR_POST'
+const CHANGE_CURR_POSTID = 'CHANGE_CURR_POSTID'
 
 const defaultState = {
     posts: [],
-    currentPost: 1
+    currentPostId: 1
 }
 
 export const postsReducer = (state = defaultState, action) => {
@@ -11,8 +11,9 @@ export const postsReducer = (state = defaultState, action) => {
         case GET_POSTS:
             return { ...state, posts: [...state.posts, action.payload] }
 
-        case CHANGE_CURR_POST: {
-            return { ...state, currentPost: 2 }
+        case CHANGE_CURR_POSTID: {
+            console.log(action.payload)
+            return { ...state, currentPostId: action.payload }
         }
         default:
             return state
@@ -20,4 +21,4 @@ export const postsReducer = (state = defaultState, action) => {
 }
 
 export const getPostsAction = (payload) => ({ type: GET_POSTS, payload })
-export const changeCurrPostAction = (payload) => ({ type: CHANGE_CURR_POST, payload })
+export const changeCurrPostIdAction = (payload) => ({ type: CHANGE_CURR_POSTID, payload })

@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { changeCurrPostAction } from '../store/postsReducer'
+import { useDispatch } from 'react-redux'
+import { changeCurrPostIdAction } from '../store/postsReducer'
 
 const Pagination = ({ allPosts }) => {
+    const dispatch = useDispatch()
 
     const itemPerPage = 10
     const [pagesCount, setPagesCount] = useState(1);
@@ -33,11 +35,11 @@ const Pagination = ({ allPosts }) => {
         )
     else
         return (
-            <div>
+            <div className='mt-3'>
                 <div className='posts w-50'>
                     {posts?.map((post, index) =>
                         <div className='posts w-50 d-flex mt-2 overflow-hidden text-nowrap border' key={index}>
-                            <Link to={`/${post.id}`} >
+                            <Link to={`/${post.id}`} onClick={() => dispatch(changeCurrPostIdAction(post.id))}>
                                 <span className='number m-1'>{post.id})</span>
                                 <span className='title m-1'>{post.title}</span>
                             </Link>
@@ -52,4 +54,3 @@ const Pagination = ({ allPosts }) => {
 }
 
 export default Pagination;
-
