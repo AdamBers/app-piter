@@ -7,14 +7,14 @@ import Pagination from "./components/2_Pagination";
 import PostItem from "./components/3_PostItem";
 
 function App() {
-  
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchPosts())
-  }, [])
-
   const allPosts = useSelector(state => state.posts[0]?.posts)
   const currentPostId = useSelector(state => state.currentPostId)
+
+  useEffect(() => {
+    console.log(1)
+    dispatch(fetchPosts())
+  }, [])
 
   return (
     <div className="App">

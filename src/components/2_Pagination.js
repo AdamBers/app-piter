@@ -8,7 +8,7 @@ const Pagination = ({ allPosts }) => {
 
     const itemPerPage = 10
     const [pagesCount, setPagesCount] = useState(1);
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1);
     const [posts, setPosts] = useState([])
 
     useEffect(() => {

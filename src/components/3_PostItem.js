@@ -9,14 +9,13 @@ function PostItem() {
     return (
         <>
             <div className='d-flex w-50 d-flex mt-2'>
-
                 <div className='item_title fw-bold m-4' >
-                    {post.title}
+                    {post?.title}
                 </div>
 
             </div>
             <div className='item_body m-2' >
-                {post.body}
+                {post?.body}
             </div>
         </>
     )
