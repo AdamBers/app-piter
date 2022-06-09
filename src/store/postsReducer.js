@@ -13,11 +13,9 @@ export const postsReducer = (state = defaultState, action) => {
             return { ...state, posts: [action.payload] }
 
         case CHANGE_CURR_POSTID: {
-            console.log(action.payload)
             return { ...state, currentPostId: action.payload }
         }
         case FILTER_POSTS: {
-            console.log(action.payload)
             return { ...state, posts: [action.payload] }
         }
         default:

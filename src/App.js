@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts } from "./store/asyncAction/posts";
-import Search from "./components/1_Search/1_Search";
-import Pagination from "./components/2_Pagination";
-import PostItem from "./components/3_PostItem";
+import Search from "./components/Search";
+import Pagination from "./components/Pagination";
+import PostItem from "./components/PostItem";
 
 function App() {
   const dispatch = useDispatch()
@@ -12,9 +12,8 @@ function App() {
   const currentPostId = useSelector(state => state.currentPostId)
 
   useEffect(() => {
-    console.log(1)
     dispatch(fetchPosts())
-  }, [])
+  }, [currentPostId, dispatch])
 
   return (
     <div className="App">

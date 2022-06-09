@@ -8,7 +8,7 @@ body {
 }
 
 .posts {
-  margin: 0 25%;
+  margin: 0 auto
 }
 
 .pagination {
@@ -18,3 +18,4 @@ body {
 .post {
   height: 20px;
 }
+
